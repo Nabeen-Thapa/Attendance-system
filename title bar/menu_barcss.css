@@ -1,0 +1,68 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+.menu_bar{
+    padding: 0.5%;
+    display: block;
+    position: fixed;
+    margin: 0%;
+    font-size: 120%;
+    width: 16%;
+    height: 100%;
+    background-color: rgb(37, 36, 36);
+    text-align: left;
+}
+@media only screen and (max-width: 750px) {
+    .menu_bar {
+      display: none;
+    }
+    .teacher_dash_display{
+        width: 100%;
+    }
+
+  }
+.menus{
+    float: inline-start;
+    text-align: left;
+    cursor: pointer;
+    padding: 2% 0% 0% 0%;
+    margin: 4% 0% 0% 0%;
+    color: rgb(247, 235, 250);
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 100%;
+    
+}
+.menu_bar button:hover{
+    background-color: rgb(116, 114, 114);
+    
+}
+.menu_bar button a:hover{
+    background-color: rgb(116, 114, 114);
+    
+}
+
+/*tacher menu bar images of dashboard*/
+.menus .teach_dashimg{
+    float: inline-end;
+    margin: 0% 0% 0% 0%;
+    padding: 0%; 
+    width: 17%;
+    height: 16%;
+    float: right; 
+}
+ /* all student edit and remove table */
+#allstd{
+    width: 20%;
+    height: 23%;
+}
+/* add student icon of dashboard menu bar */
+#addstd{
+    width: 17%;
+    height: 14%;
+}
+#logout{
+    background: transparent;
+}

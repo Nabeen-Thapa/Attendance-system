@@ -1,0 +1,12 @@
+.std_tbl_css{
+    width: 84%;
+    display: inline;
+}
+.std_tbl_css .rec_months{
+    padding: 0.5%;
+}
+table{
+    border-collapse: collapse;
+    width: 90%;
+    
+}

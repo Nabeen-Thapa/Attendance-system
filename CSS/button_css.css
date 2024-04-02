@@ -1,0 +1,13 @@
+
+.adminclick,
+.adminregclick,
+.teacherregclick,
+.stdregclick,
+.entities,
+.teacher_choosebtn
+{
+    cursor: pointer;
+    border-bottom: 4px solid blue;
+    border-right: 4px solid blue;
+    background-color: rgb(187, 187, 177);
+}

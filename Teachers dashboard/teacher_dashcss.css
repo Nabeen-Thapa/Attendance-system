@@ -1,0 +1,40 @@
+/*admin dashboard users*/
+.Dash_entities
+{
+   
+    margin-top: 200px;
+    margin-left: 1%;
+    text-align: center;
+    width: 100%;
+}
+
+.entities{
+    float: inline-start;
+    text-align: center;
+    background-color: rgb(21, 138, 5);
+    border: 1px solid yellow;
+    margin: 0.5%;
+    width: 15%;
+    height: 10%;
+} 
+.entity{
+    cursor: pointer;
+    color: rgb(171, 171, 238);
+    background-color: rgb(29, 112, 8);
+    float: inline-start;
+    border: none;
+    font-size: 120%;
+    padding-top: 2%;
+}
+.admindashpic{
+    display: block;
+    margin-top: 5px;
+    height: 40px;
+    width: 50px;
+    margin-left:40px;
+    margin-right: 2px;
+}
+/*for hover on teachers dashboard*/
+.Dash_entities .entities :hover{
+    text-decoration: 3px underline blue;  
+}

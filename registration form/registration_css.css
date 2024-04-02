@@ -1,0 +1,157 @@
+/*all registration*/
+.adminregclose, 
+.teacherregclose,
+.std_regclose{
+    display: inline;
+    float: inline-end;
+    font-size: 130%;
+    margin: 1%;
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+    font-size: 200%;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+  
+}
+#id_admin_register, 
+#id_teacher_register,
+#id_std_register
+{
+    display: block ;
+    background-color: rgb(15, 15, 15);
+    border: 3px solid rgb(47, 255, 0);
+    border-radius: 1%;
+    width: 55%;
+    padding: 0.5%;
+    font-size: large;
+    color: yellow;
+}
+.adminreg,.adminreglbl, 
+.teacherregister,.teacherreglbl, 
+.stdregister,.stdreglbl{
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 0.7%;
+    width: 39%;
+    font-size: 110%;
+}
+/* .stdreglbl{
+    width: 21%;
+    display: inline-flex;
+} */
+.adminreg,
+.teacherregister,
+.stdregister{
+    font-size: 85%;
+    background-color: rgb(225, 225, 233);
+}
+.adminregclick,
+.teacherregclick,
+.stdregclick{
+    font-size: 95%;
+    width: 21%;
+    margin: 2%;
+}
+#idadminregsubmit,
+#idteacherregsubmit,
+#idstdregsubmit{
+    
+    float: inline-end;
+}
+h1{
+    text-align: center;
+}
+
+/*teacher and student registration*/
+#idteachergenderlbl,
+#idstdgenderlbl{
+    display: block;
+   }
+.teachergender,
+.stdgender{
+    cursor: pointer;
+    margin-right: 8%;
+    margin-bottom: 3%;
+   }
+.outteachergender,
+.outstdgender{
+    margin-left: 9%;   
+   }
+
+
+
+/*student registration*/
+/* #stdgardian, #stdgardians{
+    font-size: 100%;
+    width: 30%; 
+    margin-bottom: 3%;
+    margin-right: 0%;
+} */
+
+.stdcourse_type{
+    cursor: pointer;
+    margin: 1% 15% 2% 1%;
+}
+.outstd_course_typer{
+    margin: 1% 2%; 
+}
+
+select{
+    width: 22%;
+    font-size: 80%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+#idstdyear{
+    margin-left: 14%;
+}
+.selectcourse{
+    cursor: pointer;
+    margin-left: 5%;
+}
+#idstdcourse{
+    margin-left: 15%;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+#idstdsem{
+    cursor: pointer;
+    margin-left: 15%;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+#idsectionlbl{
+    margin-right: 9%;
+}
+#idsection{
+    width: 20%;
+    margin: 1%;
+    margin-left: 0%;
+}
+
+/*submit and cancel button of student registration form*/
+.stdregclick{
+    background-color: rgb(211, 188, 188);
+}
+/*registration form input error message and student registration image uplaod */
+.reg_err,#std_reg_img_err{
+    padding: 0% 0.5%;
+    color: rgb(130, 130, 220);
+    
+}
+
+/* .std_reg_course_err, */
+.std_reg_year_err,
+.std_reg_sem_err{
+    margin: 0% 0% 0% 10%;
+    
+}
+
+/* student registration image CSS */
+#ppimage{
+    color: black;
+}

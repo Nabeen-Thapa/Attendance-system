@@ -1,0 +1,24 @@
+.searchbar{
+   float: inline-end;
+    width: 50%;
+    margin: 1% 17%;
+   
+}
+.search{
+    padding: 1%;
+    font-size: 105%;
+    background-color: rgb(189, 189, 238);
+    width: 70%;
+    display: inline;
+    border-radius: 20px;
+    text-align: center;
+}
+.search_click{
+    font-size: 103%;
+    background-color: rgb(142, 142, 208);
+    padding: 0.8%;
+    display: inline;
+    margin: 0% 0% 1% 0%;
+    border-radius: 9%;
+    text-align: center;
+}

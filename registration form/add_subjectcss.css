@@ -1,0 +1,57 @@
+/*teacher attendenca file create form*/
+.teach_create_hide{
+    font-size: 30px;
+    float: right;
+    margin: 1%;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+    margin: 3%; 
+
+}
+.teacher_choose{
+    float: inline-start;
+    background-color: rgb(43, 40, 40);
+    border: 3px solid rgb(47, 255, 0);
+    border-radius: 1%;
+    transform: translate(50%,10%);
+    width: 38%;
+    padding: 0.8%;
+    color: yellow;
+}
+.teach_chooselbl{
+    display: block;
+    font-size: 150%;
+}
+.tech_choose_option{
+    background-color: rgb(28, 184, 184);
+    font-size: 120%;
+    width: 60%;
+    display: inline;
+    margin-bottom: 3%;
+}
+.create_sub_err{
+    display: inline;
+    font-size: 110%;
+    background-color: black;
+}
+#type_choose_opt{
+    background-color: rgb(43, 40, 40);
+}
+.teacher_choosebtn{
+    width: 28%;
+    margin: 1%;
+    font-size: 105%;
+}
+#teacher_createbtn{
+    float: right;
+}
+.stdcourse_type{
+    
+    cursor: pointer;
+    margin: 1% 15% 1% 1%;
+}
+.outstd_course_typer{
+    margin: 1% 2%; 
+}

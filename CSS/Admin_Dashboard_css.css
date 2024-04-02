@@ -1,0 +1,45 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+
+/*admin menu bar*/
+.adminmenu{
+    display: inline;
+}
+
+/*admin top/title bar*/
+.admntopbar{
+    font-size: 130%;
+    color: white;
+    background-color: rgb(146, 147, 144);
+    height: 60px;
+    width: 100%;
+    float: inline-end;
+}
+
+
+/*adminp rofile*/
+.adminprofile{
+    float: inline-end;
+    height: 30px;
+    width: 30px;
+    margin-right: 15%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+}
+.adminprofilename{
+    display: block;
+    color: blue;
+    margin-right: 5%;
+    padding-top: 10%;   
+}
+
+
+
+
+
+

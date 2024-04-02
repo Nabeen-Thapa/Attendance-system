@@ -1,0 +1,42 @@
+/*admin dashboard users*/
+.Dash_entities
+{
+    margin-left: 1%;
+    text-align: center;
+    padding-top:8%;
+}
+#idadmin_dash_entities{
+    padding-top:9%; 
+}
+#idteacher_dash_entities{
+    padding-top: 5%;
+}
+.entities{
+    float: inline-start;
+    text-align: center;
+    border-top: 7px solid rgb(212, 212, 223);
+    border-left: 7px solid rgb(212, 212, 223);
+    margin: 8px;
+} 
+.adminentity{
+    cursor: pointer;
+    color: blue;
+    background-color: rgb(193, 193, 210);
+    float: inline-start;
+    border: none;
+    font-size: 150%;
+    padding-top: 2%;
+    background: transparent;
+    
+}
+.admindashpic{
+    margin-top: 5px;
+    height: 40px;
+    width: 50px;
+    margin-left:40px;
+    margin-right: 2px;
+}
+/*for hover*/
+.Dash_entities .entities :hover{
+    text-decoration: underline blue;  
+}
