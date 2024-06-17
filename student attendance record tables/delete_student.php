@@ -8,7 +8,6 @@ try{
     //sql to delete record for single row
       $delete = "delete from Student_table where id= $id";
     if(mysqli_query($connect,$delete)){
-        echo 'Product delete success';
         header('location:student_edit_table.php');
     } else {
         echo 'Failed to delete product';

@@ -11,11 +11,12 @@ h1{
 
 }
 .teacher_choose{
-    float: inline-start;
+    overflow: hidden;
+    margin-top: 350px;
+    float: inline-end; 
     background-color: rgb(43, 40, 40);
     border: 3px solid rgb(47, 255, 0);
     border-radius: 1%;
-    transform: translate(50%,10%);
     width: 38%;
     padding: 0.8%;
     color: yellow;

@@ -13,7 +13,6 @@ try{
         Semester varchar(50),
         Sem_id INT,
         Section INT,
-        
         Subject_code VARCHAR(50),
         Course_type VARCHAR(20)
         )";

@@ -1,5 +1,5 @@
 <?php
-    include_once("present_counter.php");
+    include("present_counter.php");
     if(isset($_POST["present"])){
         $present_counter--;
     }

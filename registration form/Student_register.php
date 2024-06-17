@@ -55,16 +55,16 @@ include '../database and tables/Student_table.php';
                     <?php echo isset($stderrdate) ? $stderrdate : '' ?>
                 </span>
             </div>
-            
+
             <div>
                 <label class="stdreglbl" id="idstd_course_type_lbl">select course type:</label>
                 <div class="outstd_course_typer">
                     yearly<input type="radio" class="stdcourse_type" id="idstdyearly" name="courseType"
                         onclick="yearlycourse()" value="yearly" <?php if ($courseType == "yearly")
-                            echo "checked"; ?>/>
+                            echo "checked"; ?> />
                     semester wise<input type="radio" class="stdcourse_type" id="idstdsem_wise" name="courseType"
                         onclick="semcourse()" value="semester-wise" <?php if ($courseType == "semester-wise")
-                            echo "checked"; ?>/>
+                            echo "checked"; ?> />
                     <span class="reg_err" id="std_reg_Ctype_err">
                         <?php echo isset($stderrCtype) ? $stderrCtype : '' ?>
                     </span>
@@ -93,60 +93,90 @@ include '../database and tables/Student_table.php';
                             echo "selected"; ?>>BA</option>
                     </select>
 
-                    <select id="idselectyear" name="selectyear" >
+                    <select id="idselectyear" name="selectyear">
                         <option value=" ">select year</option>
                         <option value="first year" <?php if ($Syear == "first year")
-                            echo "selected"; ?>>first year</option>
-                        <option value="second year" <?php if($Syear == "second year") echo "selected" ?>>second year </option>
-                        <option value="third year" <?php if($Syear == "third year") echo "selected" ?>>third year </option>
-                        <option value="fourth year" <?php if($Syear == "fourth year") echo "selected" ?>> fourth year</option>
-                    </select>
-                    <select id="idselectsem" name="selectsem">
-                        <option value=" " disabled selected>select semester</option>
-                        <option value="First semester"<?php if($Ssem == "First semester") echo "selected" ?>>first semester</option>
-                        <option value="second semester" <?php if($Ssem == "second semester") echo "selected" ?>>second semester</option>
-                        <option value="third semester" <?php if($Ssem == "third semester") echo "selected" ?>>third semester</option>
-                        <option value="fourth semester" <?php if($Ssem == "fourth semester") echo "selected" ?>> fourth semester</option>
-                        <option value="fifth semester" <?php if($Ssem == "fifth semester") echo "selected" ?>>fifth semester</option>
-                        <option value="sixth semester" <?php if($Ssem == "sixth semester") echo "selected" ?>>sixth semester </option>
-                        <option value="seventh semester" <?php if($Ssem == "seventh semester") echo "selected" ?>>seventh semester </option>
-                        <option value="eighth semester" <?php if($Ssem == "eighth semester") echo "selected" ?>> eighth semester</option>
-                    </select>
-                </div>
-                <span class="reg_err" id="std_reg_course_err">
-                    <?php echo isset($Serrcourse) ? $Serrcourse : '' ;?>
+                            echo "selected"; ?>>first year
+                        </option>
+                        <option value="second year" <?php if ($Syear == "second year")
+                            echo "selected" ?>>second year
+                            </option>
+                            <option value="third year" <?php if ($Syear == "third year")
+                            echo "selected" ?>>third year
+                            </option>
+                            <option value="fourth year" <?php if ($Syear == "fourth year")
+                            echo "selected" ?>> fourth year
+                            </option>
+                        </select>
+                        <select id="idselectsem" name="selectsem">
+                            <option value=" " disabled selected>select semester</option>
+                            <option value="First semester" <?php if ($Ssem == "First semester")
+                            echo "selected" ?>>first
+                                semester</option>
+                            <option value="second semester" <?php if ($Ssem == "second semester")
+                            echo "selected" ?>>second
+                                semester</option>
+                            <option value="third semester" <?php if ($Ssem == "third semester")
+                            echo "selected" ?>>third
+                                semester</option>
+                            <option value="fourth semester" <?php if ($Ssem == "fourth semester")
+                            echo "selected" ?>> fourth
+                                semester</option>
+                            <option value="fifth semester" <?php if ($Ssem == "fifth semester")
+                            echo "selected" ?>>fifth
+                                semester</option>
+                            <option value="sixth semester" <?php if ($Ssem == "sixth semester")
+                            echo "selected" ?>>sixth
+                                semester </option>
+                            <option value="seventh semester" <?php if ($Ssem == "seventh semester")
+                            echo "selected" ?>>seventh
+                                semester </option>
+                            <option value="eighth semester" <?php if ($Ssem == "eighth semester")
+                            echo "selected" ?>> eighth
+                                semester</option>
+                        </select>
+                    </div>
+                    <span class="reg_err" id="std_reg_course_err">
+                    <?php echo isset($Serrcourse) ? $Serrcourse : ''; ?>
                 </span>
                 <span class="reg_err" id="std_reg_year_err">
                     <?php echo isset($Serryear) ? $Serryear : ''; ?>
                 </span>
                 <span class="reg_err" id="std_reg_sem_err">
-                    <?php echo isset($Serrsem) ? $Serrsem : '' ;?>
+                    <?php echo isset($Serrsem) ? $Serrsem : ''; ?>
                 </span>
             </div>
-            <div>
+            <div class="std_sec_reg_rooll_lbl">
                 <label class="stdreglbl" id="idsectionlbl" for="idsection">Section:</label>
-                <input type="text" class="stdregister" id="idsection" name="section" placeholder="enter section"
-                    value="<?php echo $Ssection; ?>" />
-                <span class="reg_err" id="std_reg_sec_err">
-                    <?php echo isset($stderrsection) ? $stderrsection : '' ?>
-                </span>
-            </div>
-            <div>
                 <label class="stdreglbl" id="idregnolbl" for="idregno">Registration No.:</label>
-                <input type="number" class="stdregister" id="regno" name="regno" placeholder="enter registration No."
-                    value="<?php echo $Sregister; ?>" />
-                <span class="reg_err" id="std_reg_regno_err">
-                    <?php echo isset($stderrreg) ? $stderrreg : '' ?>
-                </span>
+                <label class="stdreglbl" id="idrolllbl" for="idrollno">Roll No.:</label>
             </div>
             <div>
-                <label class="stdreglbl" id="idrolllbl" for="idrollno">Roll No.:</label>
-                <input type="number" class="stdregister" id="idrollno" name="rollno" placeholder="enter calss roll No."
-                    value="<?php echo $Sroll; ?>" />
-                <span class="reg_err" id="std_reg_roll_err">
-                    <?php echo isset($stderrroll) ? $stderrroll : '' ?>
-                </span>
+                <div class="std_sec_roll_reg">
+                    <input type="text" class="stdregister" id="idsection" name="section" placeholder="enter section"
+                        value="<?php echo $Ssection; ?>" />
+                </div>
+                <div class="std_sec_roll_reg_err">
+                    <div class="std_sec_roll_reg">
+                        <input type="number" class="stdregister" id="regno" name="regno"
+                            placeholder="enter registration No." value="<?php echo $Sregister; ?>" />
+                    </div>
+                    <div class="std_sec_roll_reg">
+                        <input type="number" class="stdregister" id="idrollno" name="rollno"
+                            placeholder="enter calss roll No." value="<?php echo $Sroll; ?>" />
+
+                    </div>
+                </div>
             </div>
+            <span class="reg_err" id="std_reg_sec_err">
+                <?php echo isset($stderrsection) ? $stderrsection : '' ?>
+            </span>
+            <span class="reg_err" id="std_reg_regno_err">
+                <?php echo isset($stderrreg) ? $stderrreg : '' ?>
+            </span>
+            <span class="reg_err" id="std_reg_roll_err">
+                <?php echo isset($stderrroll) ? $stderrroll : '' ?>
+            </span>
             <div>
                 <label class="stdreglbl" id="idstdadrslbl" for="idstdadrs">Address:</label>
                 <input type="text" class="stdregister" id="idstdadrs" name="address"
@@ -159,11 +189,11 @@ include '../database and tables/Student_table.php';
                 <label class="stdreglbl" id="idstdgenderlbl" for="std_gen">Student gender:</label>
                 <div class="outstdgender" id="std_gen">
                     Male<input type="radio" class="stdgender" id="idstdmale" name="gender" value="Male" <?php if ($gender == "Male")
-                            echo "checked"; ?>/>
+                        echo "checked"; ?> />
                     Female<input type="radio" class="stdgender" id="idstdfemale" name="gender" value="Female" <?php if ($gender == "Female")
-                            echo "checked"; ?>/>
+                        echo "checked"; ?> />
                     Others<input type="radio" class="stdgender" id="idstdothers" name="gender" value="others" <?php if ($gender == "others")
-                            echo "checked"; ?>/>
+                        echo "checked"; ?> />
                     <span class="reg_err" id="std_reg_gen_err">
                         <?php echo isset($stderrgender) ? $stderrgender : '' ?>
                     </span>
@@ -182,7 +212,8 @@ include '../database and tables/Student_table.php';
             <!-- stndent image for frofile  -->
             <div>
                 <label for="ppimage">Image : </label>
-                <input type="file" name="ppimage" id="ppimage" class="stdregister" value="<?php echo (isset($_FILES['ppimage']))?$_FILES['ppimage']:'' ?>"/>
+                <input type="file" name="ppimage" id="ppimage" class="stdregister"
+                    value="<?php echo (isset($_FILES['ppimage'])) ? $_FILES['ppimage'] : '' ?>" />
                 <span class="reg_err" id="std_reg_img_err">
                     <?php echo isset($std_img_err) ? $std_img_err : '' ?>
                 </span>
@@ -193,54 +224,60 @@ include '../database and tables/Student_table.php';
                 <button class="stdregclick" name="std_regclk" id="idstdregsubmit"
                     onclick="stdregsubmit()">Submit</button>
             </div>
+            <div class="reg_login">
+                <label for="reg_log">alrady registered ? </label>
+                <a href="https://localhost/Attendance%20System%20project/login%20form/login_panel.php" id="log_reg"
+                    name="login_reg">login</a>
+            </div>
         </form>
     </div>
     <script src="register_script.js"></script>
     <script src="../title bar/menu_berjs.js"></script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#stdphone').keyup(function(){
-                var contact = $(this).val();
-                // ajax call
-                $.ajax('registered_phone.php',{
-                    data:{'stdphone':contact},
-                    dataType:'text',
-                    method:'post',
-                    success:function(response){
-                        $('#std_reg_phone_err').html(response);
-                    }
-                });
+<script>
+    $(document).ready(function () {
+        $('#stdphone').keyup(function () {
+            var contact = $(this).val();
+            // ajax call
+            $.ajax('registered_phone.php', {
+                data: { 'stdphone': contact },
+                dataType: 'text',
+                method: 'post',
+                success: function (response) {
+                    $('#std_reg_phone_err').html(response);
+                }
             });
         });
-        $(document).ready(function(){
-            $('#stdemail').keyup(function(){
-                var email = $(this).val();
-                // ajax call
-                $.ajax('registered_email.php',{
-                    data:{'stdemail':email},
-                    dataType:'text',
-                    method:'post',
-                    success:function(response){
-                        $('#std_reg_email_err').html(response);
-                    }
-                });
+    });
+    $(document).ready(function () {
+        $('#stdemail').keyup(function () {
+            var email = $(this).val();
+            // ajax call
+            $.ajax('registered_email.php', {
+                data: { 'stdemail': email },
+                dataType: 'text',
+                method: 'post',
+                success: function (response) {
+                    $('#std_reg_email_err').html(response);
+                }
             });
         });
-        $(document).ready(function(){
-            $('#regno').keyup(function(){
-                var register = $(this).val();
-                // ajax call
-                $.ajax('registered_reg_no.php',{
-                    data:{'regno':register},
-                    dataType:'text',
-                    method:'post',
-                    success:function(response){
-                        $('#std_reg_regno_err').html(response);
-                    }
-                });
+    });
+    $(document).ready(function () {
+        $('#regno').keyup(function () {
+            var register = $(this).val();
+            // ajax call
+            $.ajax('registered_reg_no.php', {
+                data: { 'regno': register },
+                dataType: 'text',
+                method: 'post',
+                success: function (response) {
+                    $('#std_reg_regno_err').html(response);
+                }
             });
         });
-    </script>
+    });
+</script>
+
 </html>

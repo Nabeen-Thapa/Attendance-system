@@ -1,7 +1,7 @@
 
 <?php
 $id = $_GET['id'];
-echo $id;
+    
 error_reporting(E_ALL);
 try{
     //connection to database
@@ -9,8 +9,8 @@ try{
     //sql to delete record for single row
       $delete = "delete from Student_table where id= $id";
     if(mysqli_query($connect,$delete)){
-        echo 'Product delete success';
-        header('location:student_edit_table.php');
+       
+        header('location:teacher_dashboard.php');
     } else {
         echo 'Failed to delete product';
     }

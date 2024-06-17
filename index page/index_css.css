@@ -4,16 +4,17 @@
     
 }
 /* login form choose*/
-h1{
+.wrapper--body h1{
     margin-bottom: 4%;
     margin-top: 0%; 
 }
-h2{
+.wrapper--body h2{
     margin-bottom: 1%;
     margin: 0%;
 }
-body{
+.wrapper--body{
     background-color: rgb(228, 225, 225);
+    /* background-color: red; */
     padding: 0px;
     margin: 0px;
     align-content: center;

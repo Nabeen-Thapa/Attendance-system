@@ -1,6 +1,7 @@
 .std_tbl_css{
-    width: 84%;
-    display: inline;
+    margin-top: 5px;
+    width: 83%;
+    float: inline-end; 
 }
 .std_tbl_css .rec_months{
     padding: 0.5%;

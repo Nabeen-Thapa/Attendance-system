@@ -1,5 +1,7 @@
 <?php
     include("add_subject_validate.php");
+    include ("../title bar/title_bar.php");
+     include ("../title bar/menu_bar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add subject</title>
     <link rel="stylesheet" href="add_subjectcss.css">
+    <link rel="stylesheet" href="../title bar/menu_barcss.css">
+    <link rel="stylesheet" href="../title bar/title_bar_css.css">
 </head>
 
 <body>

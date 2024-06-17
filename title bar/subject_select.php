@@ -26,7 +26,7 @@ try {
             array_push($courses, $course);
         }
     }
-    $course_type_DBselect = "SELECT DISTINCT * from subjects_table ";
+    $course_type_DBselect = "SELECT DISTINCT * from Course_type ";
     $result_course_type = mysqli_query($connection, $course_type_DBselect);
     $course_types = [];
     if (mysqli_num_rows($result_course_type) > 0) {

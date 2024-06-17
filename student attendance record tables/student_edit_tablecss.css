@@ -16,6 +16,11 @@ h1{
     padding: 0% 0% 0% 0%;
     
 }
+.std_edit_tbl{
+    margin-top: 5px;
+    width: 83%;
+    float: inline-end; 
+}
 .std_tbl_css{ 
     border-collapse: collapse;
 }

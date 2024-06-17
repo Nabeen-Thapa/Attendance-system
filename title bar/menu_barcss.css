@@ -6,7 +6,7 @@ body{
     padding: 0.5%;
     display: block;
     position: fixed;
-    margin: 0%;
+    margin: 4% 5% 0% 0%;
     font-size: 120%;
     width: 16%;
     height: 100%;
@@ -32,14 +32,15 @@ body{
     display: block;
     background: transparent;
     border: none;
+    text-decoration: none;
     font-size: 100%;
     
 }
-.menu_bar button:hover{
+.menu_bar a:hover{
     background-color: rgb(116, 114, 114);
     
 }
-.menu_bar button a:hover{
+.menu_bar a a:hover{
     background-color: rgb(116, 114, 114);
     
 }

@@ -1,4 +1,13 @@
 <?php
+if(isset($_COOKIE['teacher_id'])){
+    session_start();
+    $_SESSION['teacher_id'] = $_COOKIE['teacher_id'];
+    $_SESSION['teacher_email'] = $_COOKIE['teacher_email'];
+    $_SESSION['teacher_username'] = $_COOKIE['teacher_username'];
+}
+if(isset($_GET['err']) && $_GET['err']==1){
+    $login_pwd_err="please login to cntinue"; 
+}
 $username = $password = $email = '';
 $login_email_err = $login_pwd_err = $login_uname_err = '';
 $student_login_err = 0;
@@ -72,7 +81,6 @@ try {
         //check for teacher login
         if ($login_person == 'Teacher') {
             $teacher_login_err = 0;
-             
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $password = $_POST['password'];
@@ -80,6 +88,17 @@ try {
                 $select_name = "SELECT Name AND Email AND password from Teacher_details where Name='$username' AND Email='$email' AND  password='$password' ";
                 $result_name = mysqli_query($connect, $select_name);
                 if (mysqli_num_rows($result_name) == 1) {
+                    $row = $result_name->fetch_assoc();
+                    session_start();
+                    $_SESSION['teacher_id'] = $row['id'];
+                    $_SESSION['teacher_email'] = $row['Email'];
+                    $_SESSION['teacher_username'] = $row['Name'];
+                    if(isset($_POST['keep_sign'])){
+                        setcookie('teacher_id',$row['id'],time()+20*365*24*60*60);
+                        setcookie('teacher_username',$row['teacher_username'],time()+20*365*24*60*60);
+                        setcookie('teacher_email',$row['Email'],time()+20*365*24*60*60);
+                    }
+                    header('location:http://localhost/Attendance%20System%20project/Teachers%20dashboard/teacher_dashboard.php');
                     $ursename = $_POST['ursename'];
                     $email = $_POST['email'];
                 $password = $_POST['password'];
@@ -198,8 +217,8 @@ try {
             </div>
             <div class="log_register">
                 <label for="log_reg">NO register? </label>
-                <button type="button" id="log_reg" name="login_reg" action="../registration form/Student_register.php">
-                    register</button>
+                <a href="../registration form/Student_register.php" id="log_reg" name="login_reg">register</a>
+                    
             </div>
         </div>
     </form>

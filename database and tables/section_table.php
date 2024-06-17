@@ -9,10 +9,9 @@ try{
         id INT AUTO_INCREMENT PRIMARY KEY,
         Name VARCHAR(255) NOT NULL,
         year_id INT,
-        FOREIGN KEY (year_id) REFERENCES Year_table(id),
         sem_id INT,
+        FOREIGN KEY (year_id) REFERENCES Year_table(id),
         FOREIGN KEY (sem_id) REFERENCES Semester_table(id)
-        
     )";
     
     if(mysqli_query($connect,$semester_tbl)){

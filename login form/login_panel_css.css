@@ -90,19 +90,14 @@
     justify-content: center;
     font-size: 120%;
 }
-
-.log_register button {
-    background: transparent;
-    /* background-color: rgb(207, 205, 205); */
-    border: transparent;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 105%;
+.log_register a{
     color: yellow;
-
+    font-size: 110%;
+    cursor: pointer;
+    margin: 0% 0% 1% 2%;
 }
-.log_register button:hover{
-    color: rgb(212, 193, 17);
+.log_register a:hover{
+    color: rgb(146, 189, 61);
 }
 .loginclick {
     background-color: rgb(233, 193, 193);

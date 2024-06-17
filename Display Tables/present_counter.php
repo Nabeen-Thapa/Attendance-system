@@ -1,8 +1,11 @@
 <?php
-    $present_counter=0;
-    if(isset($_POST["present"])){
-        $present_counter++;
+     $roll = $_GET['roll'];
+try{
+    if($roll ==1){
+       $insert_roll_1 = "INSERT INTO " 
     }
-    header('Location:https://localhost/Attendance%20System%20project/Display%20Tables/student_attendance_table.php');
+
+}
+     
 ?>
 

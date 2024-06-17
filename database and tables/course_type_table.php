@@ -5,20 +5,19 @@ try{
     include 'create_database.php';
     
     //sql to create course table on database
-    $subject_tbl = "CREATE TABLE IF NOT EXISTS  Subject_table(
+    $course_type_tbl = "CREATE TABLE IF NOT EXISTS Course_type(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        Title VARCHAR(255) NOT NULL,
-        Code VARCHAR(50) 
-        )";
-    if(mysqli_query($connect,$subject_tbl)){
+        course_type VARCHAR(255) NOT NULL
+    )";
+    if(mysqli_query($connect,$course_type_tbl)){
         echo ' ';
     } else {
         echo 'Failed to create table' . mysqli_error($connect);
     }
 
     //iseret into course table
-    $insert_subject = "INSERT INTO  Subject_table(Title)VALUES('Database Management system'),('Scripting language'),('Munerical Method'),('Operating system'),('Software engineering')";
-    if(mysqli_query($connect,$insert_subject)){
+    $insert_course = "INSERT INTO Course_type(course_type)VALUES('yearly'),('Semester wise')";
+    if(mysqli_query($connect,$insert_course)){
         echo ' ';
     } else {
         echo 'Failed to create table' . mysqli_error($connect);

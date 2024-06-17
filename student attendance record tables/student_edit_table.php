@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student edit table</title>
-    <link rel="stylesheet" href="student_edit_tablecss.css">
-    <!-- <link rel="stylesheet" href="../Display Tables/student_attendance_tblcss.css"> -->
-</head>
-<body>
-    
-
-<script src="../title bar/menu_berjs.js"></script>
-</body>
-</html>
-
-
 <?php
+
 error_reporting(E_ALL);
 try 
 {
     include '../database and tables/create_database.php';
+    include ("../title bar/title_bar.php");
+    include ("../title bar/menu_bar.php");
     // Fetch data
     $select = "SELECT * FROM Student_table";
     $result = mysqli_query($connect, $select);
@@ -75,4 +61,18 @@ try
 } catch (Exception $e) {
     die('student edit table: ' . $e->getMessage());
 }
-?>
+?>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student edit table</title>
+    <link rel="stylesheet" href="student_edit_tablecss.css">
+    <link rel="stylesheet" href="../title bar/title_bar_css.css">
+    <link rel="stylesheet" href="../title bar/menu_barcss.css">
+</head>
+<body>
+</body>
+</html>
+

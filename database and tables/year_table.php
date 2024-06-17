@@ -9,7 +9,7 @@ try{
         id INT AUTO_INCREMENT PRIMARY KEY,
         Name VARCHAR(255) NOT NULL,
         course_id int,
-        FOREIGN KEY (course_id) REFERENCES Course_table(id)
+        
     )";
     if(mysqli_query($connect,$year_tbl)){
         echo ' ';

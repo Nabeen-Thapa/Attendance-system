@@ -49,6 +49,22 @@ h2{
     font-size: 85%;
     background-color: rgb(225, 225, 233);
 }
+.std_sec_roll_reg{
+    display: inline;
+    width: 20%;
+}
+#idregnolbl
+{
+    margin-left: 4%;
+}
+#idrolllbl{
+    margin-left: 10%;
+}
+#regno, 
+#idrollno{
+    width: 30%;
+    margin: 0% 1%;
+}
 .adminregclick,
 .teacherregclick,
 .stdregclick{
@@ -81,16 +97,6 @@ h1{
 .outstdgender{
     margin-left: 9%;   
    }
-
-
-
-/*student registration*/
-/* #stdgardian, #stdgardians{
-    font-size: 100%;
-    width: 30%; 
-    margin-bottom: 3%;
-    margin-right: 0%;
-} */
 
 .stdcourse_type{
     cursor: pointer;
@@ -132,6 +138,9 @@ select{
     margin: 1%;
     margin-left: 0%;
 }
+.std_sec_roll_reg_err{
+    margin-bottom: 20px;
+}
 
 /*submit and cancel button of student registration form*/
 .stdregclick{
@@ -143,7 +152,9 @@ select{
     color: rgb(130, 130, 220);
     
 }
-
+.reg_err{
+    margin: 0% 4% 10% 2%;
+}
 /* .std_reg_course_err, */
 .std_reg_year_err,
 .std_reg_sem_err{
@@ -154,4 +165,18 @@ select{
 /* student registration image CSS */
 #ppimage{
     color: black;
+}
+.reg_login{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    color: white;
+    margin: 3%;
+}
+#log_reg{
+    color: rgb(124, 124, 214);
+    cursor: pointer;
+}
+#log_reg:hover{
+    color: blue;
 }

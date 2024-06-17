@@ -125,11 +125,11 @@ if (isset($_POST['std_regclk'])) {
         $Ssection = trim($_POST['section']);
         if (!preg_match('/^[A-Z]+$/', $Ssection)) {
             $error++;
-            $stderrsection = 'section word should be In Uppercase';
+            $stderrsection = 'section should be In Uppercase';
         }
     } else {
         $error++;
-        $stderrsection = 'Enter your section';
+        $stderrsection = 'Enter section';
     }
 
     //student registration no.
@@ -154,7 +154,7 @@ if (isset($_POST['std_regclk'])) {
         // }
     } else {
         $error++;
-        $stderrreg = 'Enter your registration No.';
+        $stderrreg = 'Enter registration No.';
     }
 
     //rollno
@@ -166,7 +166,7 @@ if (isset($_POST['std_regclk'])) {
         }
     } else {
         $error++;
-        $stderrroll = 'Enter your roll No.';
+        $stderrroll = 'Enter roll No.';
     }
 
     //address
@@ -201,6 +201,7 @@ if (isset($_POST['std_regclk'])) {
         include '../database and tables/create_database.php';
         include '../database and tables/Student_table.php';
         include '../database and tables/insert_student.php';
+        include '../database and tables/insert_attendance_DB_tbl.php';
     } else {
         echo '<script>alert("check the error ");</script>';
 
