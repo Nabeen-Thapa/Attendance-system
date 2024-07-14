@@ -55,9 +55,8 @@ if (isset($_POST['Afile'])) {
         <a href="https://localhost/Attendance%20System%20project/registration%20form/add_subject.php" class="menus"
             id="add_sub"><img src="../images/add subjects.png" id="addsub" class="teach_dashimg">Add subject</a>
 
-        <a href="https://localhost/Attendance%20System%20project/login%20form/logout.php" class="menus" id="logout"><img src="images/logoutt1.png" id="logout" class="teach_dashimg">Logout</a>
-
-
+        <!-- <a href="https://localhost/Attendance%20System%20project/login%20form/logout.php" class="menus" id="logout"><img src="images/logoutt1.png" id="logout" class="teach_dashimg">Logout</a> -->
+        
     </div>
     <!-- <script src="../Teachers dashboard/teacher_dashboard_displaysjs.js"></script>
     <script src="menu_berjs.js"></script> -->

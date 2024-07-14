@@ -14,4 +14,18 @@ try{
  }catch(Exception $ex){
      die('Database Error: ' . $ex->getMessage());
  }
+
+ //load section from database into dropdown list
+ $('#section').change(function () {
+    var section = $(this).val();
+    // ajax call
+    $.ajax('../title bar/load_section.php', {
+        data: { 'section': section },
+        dataType: 'text',
+        method: 'post',
+        success: function (response) {
+            $('#subject').html(response);
+        }
+    });
+});
 ?>

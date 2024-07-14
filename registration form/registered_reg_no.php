@@ -1,10 +1,11 @@
 <?php
-    $rregister_no = $_POST['regno'];
+    
     error_reporting();
 try{
+    $register_no = $_POST['regno'];
     $log_err = 0 ;
    $connection = mysqli_connect('localhost','root','','Attendance_system');
-    $register_sql = "SELECT * from student_table where RegistrationNo ='$rregister_no'";
+    $register_sql = "SELECT RegistrationNo from student_table where RegistrationNo ='$register_no'";
     $result_reg = mysqli_query($connection,$register_sql);
     if(mysqli_num_rows($result_reg)  == 1){
         $log_err++;

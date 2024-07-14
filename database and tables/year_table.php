@@ -8,8 +8,11 @@ try{
     $year_tbl = "CREATE TABLE IF NOT EXISTS Year_table(
         id INT AUTO_INCREMENT PRIMARY KEY,
         Name VARCHAR(255) NOT NULL,
-        course_id int,
-        
+        Rank INT
+        -- course_id int,
+        -- batch_id int,
+        -- FOREIGN KEY (course_id) REFERENCES course_table(id),
+        -- FOREIGN KEY (batch_id) REFERENCES batch_table(id)
     )";
     if(mysqli_query($connect,$year_tbl)){
         echo ' ';
@@ -17,12 +20,15 @@ try{
         echo 'Failed to create table' . mysqli_error($connect);
     }
 
-    //iseret into course table
-    $insert_year = "INSERT INTO Year_table(Name)VALUES('First year'),('Second year'),('Third year'),('Fourth year')";
-    if(mysqli_query($connect,$insert_year)){
-        echo ' ';
+    // //iseret into course table
+    $insert_year = "INSERT INTO Year_table(Name,Rank)VALUES('First year','1'),('Second year','2'),('Third year','3'),('Fourth year','4')";
+
+    // $insert_year = "INSERT INTO Year_table(Name,Rank,course_id, batch_id)VALUES('$year_name','$year_rank','$year_course','$year_batch')";
+
+    if (mysqli_query($connect, $insert_year)) {
+        echo ' <script>alert("year added");</script>';
     } else {
-        echo 'Failed to create table' . mysqli_error($connect);
+        echo '<script>alert("year added error");</script>';
     }
 
 }catch(Exception $e){

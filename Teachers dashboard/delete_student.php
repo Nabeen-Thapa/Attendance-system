@@ -1,16 +1,15 @@
 
 <?php
-$id = $_GET['id'];
-    
 error_reporting(E_ALL);
 try{
     //connection to database
     include('../database and tables/create_database.php');
+    $id = $_GET['id'];    
     //sql to delete record for single row
-      $delete = "delete from Student_table where id= $id";
+      $delete = "DELETE from Student_table where id= '$id'";
     if(mysqli_query($connect,$delete)){
        
-        header('location:teacher_dashboard.php');
+        header('location:view students.php');
     } else {
         echo 'Failed to delete product';
     }

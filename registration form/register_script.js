@@ -4,15 +4,7 @@ document.getElementById('id_teacher_register').style.display='none';
 document.getElementById('id_std_register').style.display = 'none';
 */
 //admin registration click events
-  
-function adminregistration(){
-    document.getElementById('id_admin_register').style.display = 'block';
-    
-  }
-  
-  function hideadminreg(){
-    document.getElementById('id_admin_register').style.display = 'none';
-  }
+
   
   function adminregcancel(){
     document.getElementById('id_admin_register').style.display = 'none';
@@ -28,22 +20,8 @@ function adminregistration(){
     
     
   }
-  function teacherregcancel(){
-    document.getElementById('id_teacher_register').style.display='none';
-  }
   
-  //student click events
-    function hidestdreg() {
-      document.getElementById('id_std_register').style.display = 'none';
-    }
-    function studentregistration(){
-      document.getElementById('id_std_register').style.display = 'block';
-      
-    }
-    function stdregcancel(){
-      document.getElementById('id_std_register').style.display = 'none';
-    }
-
+    
 
     //student course type choose radio buttion
     function yearlycourse(){
@@ -65,3 +43,4 @@ function adminregistration(){
         document.getElementById("idstdyear").style.display = 'inline';
       }
     }
+  

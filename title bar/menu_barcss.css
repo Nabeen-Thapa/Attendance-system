@@ -8,10 +8,41 @@ body{
     position: fixed;
     margin: 4% 5% 0% 0%;
     font-size: 120%;
-    width: 16%;
+    width: 15%;
     height: 100%;
     background-color: rgb(37, 36, 36);
     text-align: left;
+}
+.admin_side_ascolling
+{
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+.menu_bar #admin_add_forms{
+    margin: 0%;
+    padding: 0% 1% 1% 1% 1%;
+    background-color: rgb(10, 10, 10);
+    border: 1px solid blue;
+}
+.menu_bar #admin_forms{
+    padding: 0% 0%;
+    margin: 0% 0.8%;
+    font-size: 85%;
+    width: 94%;
+    height: 100%;
+    background-color: rgb(59, 58, 58);
+    text-align: left;
+}
+#forms_close{
+    margin: 0%;
+    float: right;
+    color: yellow;
+    cursor: pointer;
+    font-size: 120%;
+
 }
 @media only screen and (max-width: 750px) {
     .menu_bar {
@@ -22,7 +53,9 @@ body{
     }
 
   }
-.menus{
+.menus,
+.menu_bar div
+{
     float: inline-start;
     text-align: left;
     cursor: pointer;
@@ -44,7 +77,10 @@ body{
     background-color: rgb(116, 114, 114);
     
 }
-
+.menu_bar .add_forms:hover{
+    background-color: rgb(116, 114, 114);
+    
+}
 /*tacher menu bar images of dashboard*/
 .menus .teach_dashimg{
     float: inline-end;

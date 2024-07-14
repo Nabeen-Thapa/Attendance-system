@@ -1,11 +1,12 @@
 <?php
-$stdname = $Semail = $Sphone= $Ssection = $Saddress = $courseType = $Scourse = $Syear = $Ssem = $gender = '';
+$stdname = $Semail = $Sphone = $Ssection = $Saddress = $courseType = $Scourse = $Syear = $Ssem = $gender = '';
 //student name
 // $password ='nabin123';
 $status = '1';
+$error = 0;
 if (isset($_POST['std_regclk'])) {
     $connection = mysqli_connect('localhost', 'root', '', 'Attendance_system');
-    $error = 0;
+    
     //for student name validation
     if (isset($_POST['stdinputname']) && !empty($_POST['stdinputname']) && trim($_POST['stdinputname'])) {
         $stdname = trim($_POST['stdinputname']);
@@ -24,21 +25,21 @@ if (isset($_POST['std_regclk'])) {
         if (!filter_var($Semail, FILTER_VALIDATE_EMAIL)) {
             $error++;
             $stderremail = "Do you mean " . $stdemailcheck . '?';
-        } 
-        // else {
-        //     try {
-        //         $email_sql = "SELECT Email from student_table where Email='$Semail'";
-        //         $result_eml = mysqli_query($connection, $email_sql);
-        //         if (mysqli_num_rows($result_eml) == 1) {
-        //             $error++;
-        //             $stderremail = 'email already registered';
-        //         } else {
-        //             $stderremail = ' ';
-        //         }
-        //     } catch (Exception $ex) {
-        //         die('Database Error: ' . $ex->getMessage());
-        //     }
-        // }
+        }
+        else {
+            try {
+                $email_sql = "SELECT Email from student_table where Email='$Semail'";
+                $result_eml = mysqli_query($connection, $email_sql);
+                if (mysqli_num_rows($result_eml) == 1) {
+                    $error++;
+                    $stderremail = 'email already registered';
+                } else {
+                    $stderremail = ' ';
+                }
+            } catch (Exception $ex) {
+                die('Database Error: ' . $ex->getMessage());
+            }
+        }
     } else {
         $error++;
         $stderremail = 'Enter your email';
@@ -50,22 +51,22 @@ if (isset($_POST['std_regclk'])) {
         if (!preg_match($phone_pattern, $Sphone)) {
             $error++;
             $stderrphone = "enter the validate phone";
-        } 
-        // else {
-        //     try {
+        }
+        else {
+            try {
 
-        //         $phone_sql = "SELECT Phone from student_table where Phone='$Sphone'";
-        //         $result_phone = mysqli_query($connection, $phone_sql);
-        //         if (mysqli_num_rows($result_phone) == 1) {
-        //             $error++;
-        //             $stderrphone = 'Phone already registered';
-        //         } else {
-        //             $stderrphone = '  ';
-        //         }
-        //     } catch (Exception $ex) {
-        //         die('Database Error: ' . $ex->getMessage());
-        //     }
-        // }
+                $phone_sql = "SELECT Phone from student_table where Phone='$Sphone'";
+                $result_phone = mysqli_query($connection, $phone_sql);
+                if (mysqli_num_rows($result_phone) == 1) {
+                    $error++;
+                    $stderrphone = 'Phone already registered';
+                } else {
+                    $stderrphone = '  ';
+                }
+            } catch (Exception $ex) {
+                die('Database Error: ' . $ex->getMessage());
+            }
+        }
     } else {
         $error++;
         $stderrphone = "enter your phone number";
@@ -83,7 +84,7 @@ if (isset($_POST['std_regclk'])) {
 
     } else {
         $error++;
-        $stderrdate = 'Select your Date of birth';
+        $stderrdate = 'Select birth Date';
     }
 
     // Check if the checkboxes are checked
@@ -93,33 +94,45 @@ if (isset($_POST['std_regclk'])) {
         $error++;
         $stderrCtype = "Choose your course type";
     }
-    //setudent select course
-    $Scourse = $_POST["selectcourse"];
-    if ($Scourse === "") {
-        $error++;
-        $Serrcourse = "Please select an course";
+    
+    //student course choose
+    if (isset($_POST['course']) && !empty($_POST['course'])) {
+        $selectcourse = $_POST['course'];
     } else {
-        $selectcourse = $_POST['selectcourse'];
+        $error++;
+        $course_err = "choose the course";
     }
     //setudent select year
-    if (isset($_POST['selectyear'])) {
+    if (isset($_POST['selectyear'])&& !empty($_POST['selectyear'])) {
         $Syear = $_POST["selectyear"];
-        if ($Syear === " ") {
+     } else {
             $error++;
-            $Serryear = "Please select an year";
-        } else {
-            $selectyear = $_POST['selectyear'];
+            $Serryear = "select your year";
         }
+    
+
+    //semester
+    if (isset($_POST['semester']) && empty($_POST['semester'])) {
+        $error++; 
+        $semester_err = "choose the semester";
+            
     }
-    if (isset($_POST['selectsem'])) {
-        $Ssem = $_POST["selectsem"];
-        if ($Ssem === " ") {
-            $error++;
-            $Serrsem = "Please select an semester";
-        } else {
-            $selectsem = $_POST['selectsem'];
-        }
+    else if(!isset($_POST['semester'])&& empty($_POST['semester'])){
+        $selectsem = "-";
+        $semester_err = " ";
     }
+    else {
+        $selectsem = $_POST['semester'];  
+    }
+    
+    //student batch choose
+    if (isset($_POST['batch']) && !empty($_POST['batch'])) {
+        $batch = $_POST['batch'];
+    } else {
+        $error++;
+        $batch_err = "choose the batch";
+    }
+    
     //student section
     if (isset($_POST['section']) && !empty($_POST['section']) && trim($_POST['section'])) {
         $Ssection = trim($_POST['section']);
@@ -129,7 +142,7 @@ if (isset($_POST['std_regclk'])) {
         }
     } else {
         $error++;
-        $stderrsection = 'Enter section';
+        $stderrsection = '*your section';
     }
 
     //student registration no.
@@ -139,22 +152,22 @@ if (isset($_POST['std_regclk'])) {
         if (!preg_match('/^[0-9]+/', $Sregister)) {
             $error++;
             $stderrreg = 'registration No. should be interger';
-        } 
-        // else {
-        //     try {
-        //         $register_sql = "SELECT * from student_table where RegistrationNo ='$Sregister'";
-        //         $result_reg = mysqli_query($connection, $register_sql);
-        //         if (mysqli_num_rows($result_reg) == 1) {
-        //             $error++;
-        //             $stderrreg = 'register no. already taken';
-        //         }
-        //     } catch (Exception $ex) {
-        //         die('Database Error: ' . $ex->getMessage());
-        //     }
-        // }
+        }
+        else {
+            try {
+                $register_sql = "SELECT * from student_table where RegistrationNo ='$Sregister'";
+                $result_reg = mysqli_query($connection, $register_sql);
+                if (mysqli_num_rows($result_reg) == 1) {
+                    $error++;
+                    $stderrreg = 'register no. already taken';
+                }
+            } catch (Exception $ex) {
+                die('Database Error: ' . $ex->getMessage());
+            }
+        }
     } else {
         $error++;
-        $stderrreg = 'Enter registration No.';
+        $stderrreg = '*registration No.';
     }
 
     //rollno
@@ -166,7 +179,7 @@ if (isset($_POST['std_regclk'])) {
         }
     } else {
         $error++;
-        $stderrroll = 'Enter roll No.';
+        $stderrroll = '*Roll number';
     }
 
     //address
@@ -178,7 +191,7 @@ if (isset($_POST['std_regclk'])) {
         }
     } else {
         $error++;
-        $stderraddress = 'Enter your address';
+        $stderraddress = '*your address';
     }
 
     //student gender
@@ -191,17 +204,14 @@ if (isset($_POST['std_regclk'])) {
 
     //image upload
     include 'image_upload.php';
-
     if ($error == 0) {
-
         //password venerator
-
+        $request_date = date("Y-m-d");
         include 'password_generator.php';
         //include database to store student regsitered data 
         include '../database and tables/create_database.php';
-        include '../database and tables/Student_table.php';
-        include '../database and tables/insert_student.php';
-        include '../database and tables/insert_attendance_DB_tbl.php';
+        include '../database and tables/student_request_detail.php';
+        include '../database and tables/std_request_insert.php';
     } else {
         echo '<script>alert("check the error ");</script>';
 

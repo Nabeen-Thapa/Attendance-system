@@ -94,10 +94,10 @@ try {
         </select>
         </select>
         <!-- <label for="">Section</label> -->
-        <select name="section" id="section">
+        <!-- <select name="section" id="section">
             <option value="">Sections</option>
 
-        </select>
+        </select> -->
         
         <!-- <label for="">Subject</label> -->
         <select name="subject" id="subject">

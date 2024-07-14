@@ -1,7 +1,7 @@
 /*all registration*/
-.adminregclose, 
-.teacherregclose,
 .std_regclose{
+    text-decoration: none;
+    font-size: larger;
     display: inline;
     float: inline-end;
     font-size: 130%;
@@ -11,69 +11,104 @@
 h2{
     text-align: center;
     font-size: 200%;
+    margin: 1% 0% 5% 0%;
 }
 .wrapper{
     display: flex;
     justify-content: center;
   
 }
-#id_admin_register, 
-#id_teacher_register,
+.teacher_wrapper .id_std_register{
+    width: 20%;
+}
+.student_registraation input{
+    background-color: rgb(190, 180, 204);
+    border-radius: 5px;
+    font-size: 90%;
+    margin-right: -15px;
+}
+.student_registraation input[type="radio"]{
+    margin-right: 40px; 
+}
 #id_std_register
 {
     display: block ;
-    background-color: rgb(15, 15, 15);
-    border: 3px solid rgb(47, 255, 0);
+    background-color: rgb(190, 187, 187);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 10);
     border-radius: 1%;
-    width: 55%;
+    width: 48%;
     padding: 0.5%;
     font-size: large;
-    color: yellow;
+    
 }
-.adminreg,.adminreglbl, 
-.teacherregister,.teacherreglbl, 
 .stdregister,.stdreglbl{
-    margin-right: 2%;
+    margin-right: 0%;
     margin-bottom: 2%;
     padding: 0.7%;
     width: 39%;
     font-size: 110%;
 }
-/* .stdreglbl{
-    width: 21%;
-    display: inline-flex;
-} */
-.adminreg,
-.teacherregister,
+
 .stdregister{
     font-size: 85%;
-    background-color: rgb(225, 225, 233);
+    background-color: rgb(44, 44, 46);
 }
-.std_sec_roll_reg{
-    display: inline;
-    width: 20%;
+/* student course/year/semester/batch dropdown box css */
+ 
+.selectcourse .std_course,
+.selectcourse .std_year,
+.selectcourse .std_semester,
+.selectcourse .std_batch{
+    display: inline-block;
+    width: 24%;
 }
-#idregnolbl
+.selectcourse label,
+.selectcourse select{
+    display: block;
+    
+}
+.selectcourse select{
+    background-color: rgb(185, 153, 233);
+    width: 90%;
+    font-size: 90%;
+    border-radius: 7px;
+    padding: 2% 0%;
+    margin: 0;
+}
+
+/* style for student  section/registration no / rollno.*/
+.std_sec_roll_reg div{
+    display: inline-block;
+    width: 24%;
+    margin: 0%;
+}
+.std_section,
+.std_regno,
+.std_roll,
+.std_address
 {
-    margin-left: 4%;
+    
+   display: inline-block;
 }
-#idrolllbl{
-    margin-left: 10%;
+.std_sec_roll_reg label,
+.std_sec_roll_reg input,
+.std_sec_roll_reg span{
+    display: block;
 }
-#regno, 
-#idrollno{
-    width: 30%;
-    margin: 0% 1%;
+.std_sec_roll_reg input{
+    width: 95%;
+    font-size: 90%;
+    padding: 2.5% 0.5%;
 }
-.adminregclick,
-.teacherregclick,
+
+
+/* click button */
 .stdregclick{
     font-size: 95%;
     width: 21%;
     margin: 2%;
 }
-#idadminregsubmit,
-#idteacherregsubmit,
+
 #idstdregsubmit{
     
     float: inline-end;
@@ -83,7 +118,7 @@ h1{
 }
 
 /*teacher and student registration*/
-#idteachergenderlbl,
+
 #idstdgenderlbl{
     display: block;
    }
@@ -102,81 +137,120 @@ h1{
     cursor: pointer;
     margin: 1% 15% 2% 1%;
 }
-.outstd_course_typer{
-    margin: 1% 2%; 
-}
 
-select{
-    width: 22%;
-    font-size: 80%;
-    margin-right: 5%;
-    margin-bottom: 3%;
-}
-#idstdyear{
-    margin-left: 14%;
-}
-.selectcourse{
-    cursor: pointer;
-    margin-left: 5%;
-}
-#idstdcourse{
-    margin-left: 15%;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-}
-#idstdsem{
-    cursor: pointer;
-    margin-left: 15%;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-}
-#idsectionlbl{
-    margin-right: 9%;
-}
-#idsection{
-    width: 20%;
-    margin: 1%;
-    margin-left: 0%;
-}
-.std_sec_roll_reg_err{
-    margin-bottom: 20px;
-}
 
 /*submit and cancel button of student registration form*/
 .stdregclick{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     background-color: rgb(211, 188, 188);
 }
 /*registration form input error message and student registration image uplaod */
-.reg_err,#std_reg_img_err{
+.student_registraation span,
+#std_reg_img_err{
     padding: 0% 0.5%;
-    color: rgb(130, 130, 220);
+    color: red;
     
 }
-.reg_err{
-    margin: 0% 4% 10% 2%;
+.student_registraation span{ 
+    margin: 0% 12% 5% 2%;
 }
-/* .std_reg_course_err, */
-.std_reg_year_err,
-.std_reg_sem_err{
-    margin: 0% 0% 0% 10%;
-    
-}
-
 /* student registration image CSS */
 #ppimage{
     color: black;
 }
 .reg_login{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     font-size: larger;
-    color: white;
     margin: 3%;
 }
 #log_reg{
-    color: rgb(124, 124, 214);
+    color: rgb(86, 86, 212);
     cursor: pointer;
 }
 #log_reg:hover{
     color: blue;
+}
+
+
+/*for Responsive CSS */
+/* Adjust form and wrapper on smaller screens */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        display: block;
+        padding: 1%;
+    }
+
+    #id_std_register {
+        width: 90%;
+        padding: 5%;
+        margin: auto;
+    }
+
+    .student_registraation input,
+    .stdregister,
+    .stdreglbl,
+    .stdregclick {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .selectcourse .std_course,
+    .selectcourse .std_year,
+    .selectcourse .std_semester,
+    .selectcourse .std_batch,
+    .std_sec_roll_reg div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .selectcourse select,
+    .std_sec_roll_reg input {
+        width: 100%;
+    }
+
+    .outstdgender,
+    .outstd_course_typer {
+        margin-left: 0;
+    }
+}
+
+/* Adjust form and wrapper on very small screens */
+@media screen and (max-width: 480px) {
+    .stdregclose {
+        font-size: 100%;
+        margin: 5%;
+    }
+
+    h2 {
+        font-size: 150%;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
+
+    .student_registraation input,
+    .stdregister,
+    .stdreglbl,
+    .stdregclick {
+        font-size: 85%;
+    }
+
+    .selectcourse select,
+    .std_sec_roll_reg input {
+        font-size: 80%;
+    }
+
+    .stdregclick {
+        font-size: 85%;
+        width: 45%;
+    }
+
+    #idstdregsubmit {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
 }

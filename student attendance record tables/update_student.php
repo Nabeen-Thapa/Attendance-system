@@ -241,7 +241,7 @@ if (isset($_POST['std_regclk'])) {
             <div>
                 <label class="stdreglbl" id="pwdlbl" for="password">password:</label>
                 <input type="password" class="stdregister" id="password" name="password"
-                    placeholder="chnage your password" value="<?php echo isset($password)?$password:''; ?>" />
+                    placeholder="chnage your password" value="<?php echo isset($password) ? $password : ''; ?>" />
                 <img src="images/pwd_hide1.png" id="pwd_hide" onclick="pwdhide()"><img src="images/pwd_show.png"
                     id="pwd_show" onclick="pwdshow()">
                 <span class="reg_err" id="std_reg_pwd_err">
@@ -278,23 +278,30 @@ if (isset($_POST['std_regclk'])) {
                     <label class="stdcourselbl" id="idstdsem" for="idselectsem">select semester(if semester)</label>
                 </div>
                 <div>
-                    <select id="idselectcourse" name="selectcourse" value="<?php echo $student_data['std_course']; ?>">
+                    <select id="idselectcourse" name="selectcourse">
                         <option value="">select course</option>
-                        <option value="BCA">BCA</option>
-                        <option value="BBA">BBA</option>
-                        <option value="BIT">BIT</option>
-                        <option value="BSCsIT"> Bsc.CSIT</option>
-                        <option value="BBS"> BBS</option>
-                        <option value="BA">BA</option>
+                        <?php
+                        // Query to fetch course data from the database
+                        $query = "SELECT DISTINCT std_course FROM student_table";
+                        $result = mysqli_query($connect, $query);
+
+                        // Loop through the results and generate options
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $course = $row['std_course'];
+                            $selected = ($row['std_course'] == $course) ? "selected" : ""; // Check if current course matches student's course
+                            echo '<option value="' . $course . '" ' . $selected . '>' . $course . '</option>';
+                        }
+                        ?>
                     </select>
-                    <select id="idselectyear" name="selectyear" value="<?php echo $student_data['year']; ?>">
+
+                    <select id="idselectyear" name="selectyear">
                         <option value=" ">select year</option>
                         <option value="first year">first year</option>
                         <option value="second year">second year </option>
                         <option value="third year">third year </option>
                         <option value="fourth year"> fourth year</option>
                     </select>
-                    <select id="idselectsem" name="selectsem" value="<?php echo $student_data['semester']; ?>">
+                    <select id="idselectsem" name="selectsem">
                         <option value=" ">select semester</option>
                         <option value="First semester" value="<?php if ($student_data['semester'])
                             echo "selected"; ?>>first semester</option>
@@ -384,8 +391,9 @@ if (isset($_POST['std_regclk'])) {
                 </div>
             </div>
             <div>
-                <button class="stdregclick" name="std_reg_cancel" id="idstdregcancel"
-                    onclick="stdregcancel()">cancel</button>
+                <button class="stdregclick" name="std_reg_cancel" id="idstdregcancel" onclick="stdregcancel()"
+                    class="stdregclick">cancel</button>
+
                 <button class="stdregclick" name="std_regclk" id="idstdregsubmit"
                     onclick="stdregsubmit()">Update</button>
             </div>

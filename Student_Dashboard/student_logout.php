@@ -1,0 +1,9 @@
+<?php
+session_start();
+session_destroy();
+setcookie('id',false,time()-65*24*60*60);
+setcookie('student_username',false,time()-65*24*60*60);
+setcookie('student_email',false,time()-65*24*60*60);
+setcookie('student_id',false,time()-65*24*60*60);
+header('location:https://localhost/Attendance%20System%20project/Student_Dashboard/student_login.php');
+?>

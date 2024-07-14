@@ -1,101 +1,119 @@
+body {
+    background-color: rgb(175, 146, 204);
+}
+
 /*welcome*/
-#idwelcome{
+#index_body #idwelcome {
     font-size: 250%;
-    
 }
+
 /* login form choose*/
-.wrapper--body h1{
+.index_body h1 {
     margin-bottom: 4%;
-    margin-top: 0%; 
+    margin-top: 0%;
 }
-.wrapper--body h2{
+
+.index_body h2 {
     margin-bottom: 1%;
     margin: 0%;
 }
-.wrapper--body{
+
+.index_body {
     background-color: rgb(228, 225, 225);
-    /* background-color: red; */
     padding: 0px;
     margin: 0px;
     align-content: center;
-    /* background-image: url(images/press.htm);
-    background-repeat: no-repeat;
-    background-size: cover; */
 }
-#idchoosetype{
+
+#idchoosetype {
     background-color: rgb(109, 108, 108);
     color: rgb(181, 253, 11);
-    width: 30%; 
+    width: 90%;
+    max-width: 500px;
     margin-bottom: 5%;
     margin-top: 8%;
     padding-top: 0%;
     padding: 2%;
     border: 0.009px solid rgb(4, 252, 45);
     border-radius: 2%;
-    
+    box-shadow: 0 0 24px rgba(0, 0, 0, 15);
 }
 
-.chooseperson{
+.chooseperson {
     width: 40%;
     font-size: 15px;
     height: 30px;
 }
 
 /*click button for login*/
-.loginfirst{
+.loginfirst {
     font-size: 120%;
-    
 }
-.loginopen{
-    
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.loginopen,
+.index_reg_open {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 15);
+    padding: 1%;
     border-bottom: 3px solid black;
     border-right: 3px solid black;
-    background: transparent;
+    background-color: rgb(73, 66, 70);
     font-size: large;
     color: white;
     margin-top: 3%;
     margin-bottom: 0%;
-   
+    text-decoration: none;
+    text-align: center;
+    flex: 1 1 30%;
+    max-width: 100px;
 }
-#idlogin-choose{
-    text-decoration: underline blue;
-}
-#idloginborder{
 
+#idloginborder a:hover {
+    background-color: rgb(49, 45, 47);
+}
+
+#idregborder a:hover {
+    background-color: rgb(49, 45, 47);
+}
+
+#idloginborder {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 15);
     border: 1px solid rgb(31, 31, 116);
     border-radius: 2%;
     margin-top: 7%;
     margin-bottom: 4%;
     padding: 4%;
-    padding-top: 1%;
 }
-.loginchooseclose{
+
+.loginchooseclose {
     cursor: pointer;
     font-size: 160%;
     float: inline-end;
-    display: block;  
+    display: block;
 }
-
 
 /*registrartion type open*/
-.noreg{
+.noreg {
     font-size: 120%;
 }
-.regopen{
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
-    background: transparent;
-    font-size: large;
-    color: white;
-    margin-top: 3%;
-    margin-bottom: 0%;
-   
+
+.index_reg_open .loginopen:hover {
+    background-color: blue;
+    color: yellow;
 }
-#idreg-choose{
+
+#index_body #idreg-choose {
     text-decoration: underline blue;
-    
 }
-#idregborder{
+
+#idregborder {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 15);
     border: 1px solid rgb(34, 34, 113);
     border-radius: 2%;
     margin-top: 7%;
@@ -103,40 +121,70 @@
     padding: 4%;
     padding-top: 1%;
 }
-.regchooseclose{
-    
+
+.regchooseclose {
     cursor: pointer;
     font-size: 160%;
     float: inline-end;
-    display: block;  
+    display: block;
 }
-
 
 /*registration form choose*/
-h3{
+h3 {
     margin: 0%;
 }
-.regtype{
-    cursor: pointer;
-    display: block;
-    margin: 2%;
-    width: 60%;
-    font-size: larger;
-    border-bottom: 4px solid rgb(73, 8, 151);
-    border-right: 4px solid rgb(73, 8, 151);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(189, 244, 23);
-    border-radius: 7px;
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    #idchoosetype {
+        width: 80%;
+    }
+
+    .loginopen,
+    .index_reg_open {
+        font-size: medium;
+        padding: 2%;
+    }
+
+    #idloginborder,
+    #idregborder {
+        margin-top: 5%;
+        padding: 3%;
+    }
+
+    .loginfirst,
+    .noreg {
+        font-size: 100%;
+    }
 }
 
+@media (max-width: 480px) {
+    #idchoosetype {
+        width: 95%;
+    }
 
+    .login-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .loginopen,
+    .index_reg_open {
+        font-size: small;
+        padding: 2%;
+        width: 28%;
+        max-width: none;
+        margin: 5px 0;
+    }
 
-/*login error message display
-.login_err,
-.reg_err{
-    color: rgb(228, 226, 238);
-    background-color: black;
-    font-size: 90%;
-    padding: 0.5% 1%;
-}*/
+    #idloginborder,
+    #idregborder {
+        margin-top: 3%;
+        padding: 2%;
+    }
+
+    .loginfirst,
+    .noreg {
+        font-size: 90%;
+    }
+}

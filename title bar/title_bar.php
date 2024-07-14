@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['teacher_email'])){
+    header('location:https://localhost/Attendance%20System%20project/Teachers%20dashboard/teacher_login.php');
+}
+if(!isset($_SESSION['admin_email'])){
+    header('location:https://localhost/Attendance%20System%20project/Admin%20dashboard/Admin_login.php');
+}
 try {
     $connection = mysqli_connect('localhost', 'root', '', 'Attendance_system');
 
@@ -52,7 +59,6 @@ try {
     <div id="dash_topbar">
         <div class="Alogo"><img src="../logo/system logo.png" alt="" class="alogo_pic"></div>
         <form action="" class="dropdown_lists">
-            <!-- <label for="">course type</label> -->
             <select name="course_type" id="course_type" class="DDselect">
                 <option value="">course type</option>
                 <?php foreach ($course_types as $course_type) { ?>
@@ -62,7 +68,6 @@ try {
 
                 <?php } ?>
             </select>
-            <!-- <label for="">course</label> -->
             <select name="course" id="course" class="DDselect">
                 <option value="">Course</option>
                 <?php foreach ($courses as $course) { ?>
@@ -87,22 +92,33 @@ try {
             <option value="">Semester</option>
             </select>
             </select>
-        <!-- <label for="">Section</label> -->
-        <select name="section" id="section" class="DDselect">
-            <option value="">Sections</option>
-
-        </select>
-
             <!-- <label for="">Subject</label> -->
             <select name="subject" id="subject" class="DDselect">
                 <option value="">Subject</option>
             </select>
         </form>
+        <?php
+        //checking for admin/teacher login
+        if(isset($_SESSION['teacher_email'])){
+            echo '
+        <a href="https://localhost/Attendance%20System%20project/title%20bar/teacher_logout.php"
+            class="logout_btn">T logout</a>'; 
+    }else if(isset($_SESSION['admin_email'])){
+        echo '
+        <a href="https://localhost/Attendance%20System%20project/title%20bar/admin_logout.php"
+            class="logout_btn">A logout</a>';
+    }
+            ?>
         <!--teachers pfofile part-->
         <div id="idteacher_profile_part">
             <div id="idteacher_pic_part">
+           
                 <img src="../images/teacher profile.png" alt="" class="teacherPP">
-                <div id="idprofile_text">Teacher</div>
+                <div id="idprofile_text">
+                    <?php if(isset($_SESSION['teacher_email'])) {echo $_SESSION['teacher_username'];
+                    }
+                    else if(isset($_SESSION['admin_email'])){echo $_SESSION['admin_username'];
+                    } ?></div>
             </div>
         </div>
 
@@ -133,21 +149,15 @@ try {
                         $('#subject').html(response);
                     }
                 });
-            });
-            $('#section').change(function () {
-                var section = $(this).val();
-                // ajax call
-                $.ajax('../title bar/load_section.php', {
-                    data: { 'section': section },
-                    dataType: 'text',
-                    method: 'post',
-                    success: function (response) {
-                        $('#subject').html(response);
-                    }
-                });
-            });
+            });   
         });
     </script>
 </body>
 
 </html>
+<!-- <img src="../Admin dashboard/teacher_images/<?php if(isset($_SESSION['teacher_email'])) {
+                echo $_SESSION['image'] ;
+            }
+            else if(isset($_SESSION['admin_email'])){
+                echo ' ';
+            } ?>" class="studentPP"> -->

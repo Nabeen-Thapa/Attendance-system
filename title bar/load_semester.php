@@ -11,6 +11,9 @@ try{
         }
      }
      echo $subject;
+
+    //  $sem_std = $_POST['Name'];
+    //  $select_sem_std = "SELECT * from student_table where semester ='$sem_std'; 
  }catch(Exception $ex){
      die('Database Error: ' . $ex->getMessage());
  }

@@ -34,8 +34,6 @@ try
     if (mysqli_num_rows($result) > 0) {
         echo"<div class='std_tbl_css'id='student_record'>";
         echo "<center><h2>Attendance record</h2></center>";
-        echo "<center><h3>subject: </h3></center>";
-        echo "<center><h3>Teacher:</h3></center>";
         echo '<table border="1">
                 <tr>
                 <th rowspan="2">profile</th> 

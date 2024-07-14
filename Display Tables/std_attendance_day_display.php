@@ -14,7 +14,7 @@ try {
         die("Connection failed: " . mysqli_connect_error());
     }
     // Fetch data
-    $select_day = "SELECT * FROM fourth_sem_DB_records";
+    $select_day = "SELECT * FROM attendance_record_table";
     $result_day = mysqli_query($connect, $select_day);
 
     if (mysqli_num_rows($result_day) > 0) {
@@ -32,7 +32,7 @@ try {
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>
                     <td>
-                    <img src="../registration form/student_images/' .$row['image'].'" class="student_tbl_pic" onclick ="profile_details()">  
+                        <img src="../registration form/student_images/' .$row['image'].'" class="student_tbl_pic" onclick ="profile_details()">  
                     </td>
                     <td>' . $row['id'] . '</td>
                     <td class="leftname">' . $row['Name'] . '</td>
@@ -41,9 +41,6 @@ try {
                     <td>' . $row['year'] . '</td>
                     <td>' . $row['semester']. '</td>
                     <td>' . $row['section']. '</td>
-                    <td>
-    
-                    </td>
                 </tr>
             ';
         }
