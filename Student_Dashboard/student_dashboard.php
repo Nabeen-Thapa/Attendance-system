@@ -139,8 +139,8 @@ if (mysqli_num_rows($result_absent) == 1) {
             <img src="images/attendance pic.png" class="std_dash_img" id="">
         </div>
     </div>
-    <div class="std_dash_content">this attendance system show the detail only about login student, you can see only
-        about detail and can update your datail. </div>
+    <!-- <div class="std_dash_content">this attendance system show the detail only about login student, you can see only
+        about detail and can update your datail. </div> -->
 </body>
 
 </html>

@@ -40,7 +40,8 @@ try {
     } else {
         $attendance_select = "SELECT 
         student_table.Name AS std_name, 
-        student_table.RollNo AS std_roll, 
+        student_table.RollNo AS std_roll,
+         student_table.id AS std_id,
         student_table.image AS std_img,
         batch_table.Title AS batch_name, 
         semester_table.Name AS semester_name,
@@ -69,6 +70,7 @@ try {
         echo "<div class='view_attendace_record'>";
         echo "<center><h2>Attendance Record</h2></center>";
         echo "<center><h3>subject name : " . $sub_tilte . "</h2></center>";
+        echo '<a  href="view_subject_wise.php" class="view_date_wise_back">back</a>  ';
         echo "<div class='view_dropdown'>";
 
         echo "</div>";
@@ -81,21 +83,25 @@ try {
                     <th>Semester</th>
                     <th>Present Days</th>
                     <th>Absent Days</th>
+                    <th>view date</th>
                 </tr>
             ';
 
         while ($attendance_row = mysqli_fetch_assoc($attendance_result)) {
             echo '<tr>
-            <td>
-            <img src="../registration form/student_images/' . $attendance_row['std_img'] . '" class="student_tbl_pic" onclick="profile_details()">  
-            </td>
+                    <td>
+                        <img src="../registration form/student_images/' . $attendance_row['std_img'] . '" class="student_tbl_pic" onclick="profile_details()">  
+                    </td>
                     <td>' . $attendance_row['std_roll'] . '</td>
                     <td class="leftname">' . $attendance_row['std_name'] . '</td>
                     <td>' . $attendance_row['batch_name'] . '</td>
                     <td>' . $attendance_row['semester_name'] . '</td>
                     <td>' . $attendance_row['present_count'] . '</td>
                     <td>' . $attendance_row['absent_count'] . '</td>
-                </tr>
+                    <td><a  href="view_record_date_wise.php?sem_id=' . $sem_id . '&sub_id=' . $sub_id . '&sub_title=' .$sub_tilte . '&std_id=' .$attendance_row['std_id'] . '" class="view_date_wise">view date</a>                 
+                </td>
+                    
+            </tr>
             ';
         }
         echo '</table>';

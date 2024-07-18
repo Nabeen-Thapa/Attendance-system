@@ -10,20 +10,20 @@
 
 <body>
     <div class="menu_bar">
-            <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/Admin_dashboard.php"
+            <a href="../Admin dashboard/Admin_dashboard.php"
                 class="menus">Dashboard<img src="../images/dashboards.png" alt="" class="teach_dashimg"></a>
 
-            <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/student_edit_table.php"
+            <a href="../Admin%20dashboard/student_edit_table.php"
                 class="menus">Students<img src="../images/all students.jpg" alt="" class="teach_dashimg"
                     id="allstd"></a>
-            <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/view_attendance_record.php"
+            <a href="../Admin%20dashboard/view_attendance_record.php"
                 class="menus" id="Arecord"><img src="../images/present students.png" alt=""
                     class="teach_dashimg">Attendance
                 records</a>
             <a href="view_subject_wise.php"
             class="menus" id="Arecord"><img src="../images/present students.png" alt=""class="teach_dashimg">subject wise</a>
 
-            <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/std_request_accept_tbl.php"
+            <a href="../Admin dashboard/std_request_accept_tbl.php"
                 class="menus" id="add_sub"><img src="../images/std_request.png" id="addsub"
                     class="teach_dashimg">student
                 request</a>
@@ -32,23 +32,23 @@
                         class="teach_dashimg"></div>
                 <div id="admin_forms">
                     <div id="forms_close" onclick="form_close()">&times;</div>
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_admin_form.php"
+                    <a href="../Admin dashboard/add_admin_form.php"
                         class="menus" id="Arecord"><img src="../images/present students.png" alt=""
                             class="teach_dashimg">Add new admin</a>
 
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_teacher_form.php"
+                    <a href="../Admin dashboard/add_teacher_form.php"
                         class="menus" id="add_sub"><img src="../images/add_teacher.png" id="addsub"
                             class="teach_dashimg">add teachers</a>
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_course_form.php"
+                    <a href="../Admin dashboard/add_course_form.php"
                         class="menus" id="add_sub"><img src="../images/add subjects.png" id="addsub"
                             class="teach_dashimg">add course</a>
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_batch_form.php"
+                    <a href="../Admin dashboard/add_batch_form.php"
                         class="menus" id="add_sub"><img src="../images/add subjects.png" id="addsub"
                             class="teach_dashimg">add batch</a>
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_subject_form.php"
+                    <a href="../Admin dashboard/add_subject_form.php"
                         class="menus" id="add_sub"><img src="../images/add subjects.png" id="addsub"
                             class="teach_dashimg"> add subject</a>
-                    <a href="https://localhost/Attendance%20System%20project/Admin%20dashboard/add_subject_teacher_form.php"
+                    <a href="../Admin dashboard/add_subject_teacher_form.php"
                         class="menus" id="add_sub"><img src="../images/add subjects.png" id="addsub"
                             class="teach_dashimg">assign subject</a>
                 </div>

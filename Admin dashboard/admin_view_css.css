@@ -269,3 +269,17 @@ option {
     background-color: rgb(156, 57, 57);
 }
 
+
+.view_date_wise_back{
+   text-decoration: none;
+   color: black; 
+   background-color: #007bff;
+   margin-bottom: 20px;
+   border: black 1px;
+   border-radius: 5px;
+   padding: 0px 7px;
+   font-size: 25px;
+}
+.view_date_wise_back:hover{
+    background-color: #679fda;
+}
